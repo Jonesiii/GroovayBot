@@ -18,8 +18,8 @@ npm install
 
 To add your bot to a Discord server, follow this [guide](https://www.upwork.com/resources/how-to-make-discord-bot).
 
-You need to create a config.json file and paste the text from the sampleConfig.json 
-with your personal token (see above guide for the token).
+You need to create a .env file and paste the text from the .envSample
+with your personal token and client id (see above guide for the token and id).
 
 ## Usage
 
