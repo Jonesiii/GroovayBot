@@ -1,19 +1,24 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder, SlashCommandBuilder } = require('discord.js');
 const ping = require('./ping');
 const play = require('./play');
-const stop = require('./stop');
+const exit = require('./exit');
 
 module.exports = {
-  name: "help",
-  description: "gives the available commands",
-  execute(message, args) {
+  data: new SlashCommandBuilder()
+    .setName("help")
+    .setDescription("Gives the available commands"),
+  execute: ({client, interaction}) => {
 
-    const embed = new MessageEmbed()
+    let embed = new EmbedBuilder();
+    
+    embed
       .setTitle("Available Commands:")
-      .addField("```!ping```", ping.description)
-      .addField("```!play```", play.description)
-      .addField("```!stop```", stop.description);
+      .addFields(
+        {name:"```/ping```", value: ping.data.description},
+        {name:"```/play```", value: play.data.description},
+        {name:"```/exit```", value: exit.data.description}
+      );
 
-    message.reply({embeds: [embed]});
+    return interaction.reply({content:' ', ephemeral: true, embeds: [embed]});
   }
 }

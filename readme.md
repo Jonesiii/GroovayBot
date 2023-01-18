@@ -6,6 +6,7 @@ the user's input and plays the first search result in the voice channel.
 ## Requirements
 
 Node 18
+[FFMPEG](https://ffmpeg.org/download.html#build-windows) 
 
 ## Installation
 
