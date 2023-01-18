@@ -39,11 +39,9 @@ client.on("messageCreate", async message => {
     client.commands.get("play").execute(message, args); 
   } else if (command === "stop") {
     client.commands.get("stop").execute(message, args); 
+  } else if (command === "help") {
+    client.commands.get("help").execute(message, args); 
   } 
 });
-
-client.on("error", (e) => {
-  message.channel.send("Oh no the client encountered an error: ", e);
-})
 
 client.login(config.token);

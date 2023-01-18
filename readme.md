@@ -25,3 +25,6 @@ with your personal token (see above guide for the token).
 ```bash
 node main.js
 ```
+```js
+!help // in a Discord channel to get available commands 
+```
