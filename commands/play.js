@@ -119,7 +119,7 @@ module.exports = {
       if (!queue.playing) await queue.play();
 
       await interaction.reply({
-        content: ' ', ephemeral: true, embeds: [embed]
+        content: ' ', ephemeral: false, embeds: [embed]
       })
     }
 }

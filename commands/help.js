@@ -1,4 +1,5 @@
 const { EmbedBuilder, SlashCommandBuilder } = require('discord.js');
+
 const ping = require('./ping');
 const play = require('./play');
 const exit = require('./exit');

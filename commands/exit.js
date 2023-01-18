@@ -10,7 +10,7 @@ module.exports = {
 
     queue.destroy();
 
-    await interaction.reply("Ok, I'll leave :smiling_face_with_tear:")
+    await interaction.reply({content: "Ok, I'll leave :smiling_face_with_tear:", ephemeral: false});
   }
 
 }
