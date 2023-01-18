@@ -42,7 +42,7 @@ module.exports = {
       if (!interaction.member.voice.channel) {
         return interaction.reply("You must be in a voice channel to use this command!"); 
       }
-
+      
       const queue = await client.player.createQueue(interaction.guild);
 
       if (!queue.connection) await queue.connect(interaction.member.voice.channel);
@@ -66,7 +66,7 @@ module.exports = {
         await queue.addTrack(song);
 
         embed
-          .setDescription(`:musical_note: Added:  ***[${song.title}(${song.url}*** to the queue. :musical_note:`)
+          .setDescription(`:musical_note: Added:  ***[${song.title}(${song.url})*** to the queue. :musical_note:`)
           .setThumbnail(song.thumbnail)
           .setFooter({text: `Duration: ${song.duration}`});
       }
@@ -81,16 +81,15 @@ module.exports = {
         });
 
         if (result.tracks.length === 0) {
-          await interaction.reply("No playlist found.");
+          await interaction.reply(`No playlist found with ${url}.`);
           return;
         }
-        const playlist = result.tracks[0];
-        await queue.addTrack(playlist);
+        const playlist = result.playlist;
+        await queue.addTracks(result.tracks);
 
         embed
-          .setDescription(`:musical_note: Added:  ***[${playlist.title}(${playlist.url}*** to the queue. :musical_note:`)
-          .setThumbnail(playlist.thumbnail)
-          .setFooter({text: `Duration: ${playlist.duration}`});
+          .setDescription(`:musical_note: Added:  ***${result.tracks.length} songs from [${playlist.title}(${playlist.url})*** to the queue. :musical_note:`)
+          //.setThumbnail(playlist.thumbnail);
       }
 
       // youtube keyword search (adds the first result to queue)
@@ -110,7 +109,7 @@ module.exports = {
         await queue.addTrack(song);
 
         embed
-          .setDescription(`:musical_note: Added:  ***[${song.title}(${song.url}*** to the queue. :musical_note:`)
+          .setDescription(`:musical_note: Added:  ***[${song.title}(${song.url})*** to the queue. :musical_note:`)
           .setThumbnail(song.thumbnail)
           .setFooter({text: `Duration: ${song.duration}`});
       }
