@@ -1,4 +1,7 @@
 const { MessageEmbed } = require('discord.js');
+const ping = require('./ping');
+const play = require('./play');
+const stop = require('./stop');
 
 module.exports = {
   name: "help",
@@ -7,9 +10,9 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setTitle("Available Commands:")
-      .addField("```!ping```", "Pings the server")
-      .addField("```!play```", "Plays the first search result from Youtube. Example usage: !play Michael Jackson Thriller")
-      .addField("```!stop```", "Makes the bot stop playing music and leave the voice channel");
+      .addField("```!ping```", ping.description)
+      .addField("```!play```", play.description)
+      .addField("```!stop```", stop.description);
 
     message.reply({embeds: [embed]});
   }

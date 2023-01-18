@@ -4,7 +4,7 @@ const { joinVoiceChannel, createAudioPlayer, createAudioResource } = require('@d
 
 module.exports = {
   name: "play",
-  description: "Plays a video from youtube!",
+  description: "Plays the first search result from Youtube. Example usage: !play Michael Jackson Thriller",
   async execute(message, args) {
     const voiceChannel = message.member.voice.channel;
 

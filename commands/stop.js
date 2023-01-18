@@ -3,7 +3,7 @@ const { getVoiceConnection } = require('@discordjs/voice');
 
 module.exports = {
   name: "stop",
-  description: "this is a stop command!",
+  description: "Makes the bot stop playing music and leave the voice channel",
   async execute(message, args) {
     const voiceChannel = message.member.voice.channel;
 
