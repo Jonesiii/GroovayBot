@@ -6,7 +6,8 @@ a YouTube url to specify the song/playlist you want to listen to!
 
 ## Requirements
 
-Node 18
+Node 18  
+Discord.js v14  
 [FFMPEG](https://ffmpeg.org/download.html#build-windows) 
 
 ## Installation
