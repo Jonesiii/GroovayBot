@@ -6,6 +6,7 @@ const exit = require('./exit');
 const skip = require('./skip');
 const pause = require('./pause');
 const resume = require('./resume');
+const queue = require('./queue');
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -23,6 +24,7 @@ module.exports = {
         {name:"```/pause```", value: pause.data.description},
         {name:"```/resume```", value: resume.data.description},
         {name:"```/skip```", value: skip.data.description},
+        {name:"```/queue```", value: queue.data.description},
         {name:"```/exit```", value: exit.data.description},
       );
 
