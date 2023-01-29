@@ -23,7 +23,7 @@ module.exports = {
         
         queue.setPaused(false);
 
-        // Return an embed to the user saying the song has been paused
+        // Return an embed to the user saying the song has been resumed
         await interaction.reply({
             embeds: [
               new EmbedBuilder()
